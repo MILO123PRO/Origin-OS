@@ -1,5 +1,6 @@
 html, body {
-  height: 100%;
+  min-height: max(100%, 100vh);
+  width: 100vw;
 }
 
 body {
@@ -9,9 +10,6 @@ body {
   transition: background-color 0.3s ease;
   color: #fff;
   background: linear-gradient(135deg, #ff7e5f, #57cdac, #222);
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh; /* Ensure body fills the viewport height */
 }
 
   
@@ -75,7 +73,7 @@ body {
   }
   
   .centered-card {
-    max-width: 550px;
+    max-width: 700px;
     margin-top: 20px;
     background-color: #222;
     padding: 10px;
@@ -111,12 +109,12 @@ body {
 .docs-grid {
     padding: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
 }
 
 .card {
-  max-width: 550px;
+    max-width: 700px;
     min-height: 220px;
     background-color: #222;
     padding: 20px;
@@ -167,13 +165,13 @@ body {
   background-color: #222;
   border-radius: 10px;
   transition: 0.2s;
-  width: 550px;
+  width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .tab {
-  min-width: 50px;
+  min-width: 67.5px;
   background-color: #222;
   padding: 10px 10px;
   cursor: pointer;
@@ -202,4 +200,24 @@ body {
 
 .tab-content.active {
   display: block;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+    max-width: none; /* Reset max-width */
+  }
+
+  .tabs {
+    width: 80%; /* Adjust tabs width */
+    border-radius: 0; /* Remove border-radius */
+    margin: 0; /* Remove margin */
+  }
+
+  .centered-card {
+    width: 90%; /* Adjust width */
+    max-width: none; /* Reset max-width */
+  }
 }
